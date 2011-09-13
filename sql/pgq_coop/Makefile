@@ -4,7 +4,7 @@ DATA_built = pgq_coop.sql pgq_coop.upgrade.sql
 SQL_FULL = structure/schema.sql structure/functions.sql structure/grants.sql
 SQL_UPGRADE = structure/functions.sql
 
-FUNCS = $(shell sed -n -e '/^\\/{s/\\i //;p}' structure/functions.sql)
+FUNCS = $(shell sed -n -e '/^\\/{s/\\i //p;}' structure/functions.sql)
 SRCS = $(SQL_FULL) $(FUNCS)
 
 REGRESS = pgq_coop_test
