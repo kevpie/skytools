@@ -54,7 +54,7 @@ Send SIGHUP to scripts that are running.
 
 == CONFIG ==
 
-include::common.config.txt[]
+ include common.config.txt[]
 
 === scriptmgr parameters ===
 
