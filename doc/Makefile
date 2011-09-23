@@ -1,4 +1,3 @@
-
 include ../config.mak
 
 web = mkz@pgf:/home/pgfoundry.org/groups/skytools/htdocs/skytools-3.0
@@ -25,8 +24,6 @@ FQMAN1 = $(addprefix man/, $(MAN1))
 FQMAN1_SFX = $(addprefix man/, $(MAN1_SFX))
 FQMAN5 = $(addprefix man/, $(MAN5))
 FQMAN = $(FQMAN1) $(FQMAN1_SFX) $(FQMAN5)
-
-COMMON = common.switches.txt common.config.txt common.logutriga.txt
 
 GETATTRS = python ../misc/getattrs.py
 FIXMAN = python ../misc/fixman.py
@@ -94,7 +91,7 @@ realclean: distclean
 
 ifneq ($(ASCIIDOC),no)
 ifneq ($(XMLTO),no)
-man/%.xml: %.txt $(COMMON)
+man/%.xml: %.txt
 	@mkdir -p man
 	$(ASCIIDOC) -b docbook -d manpage `$(GETATTRS) $<` -o - $< \
 	| $(FIXMAN) > $@
@@ -104,7 +101,7 @@ man/%.1: man/%.xml
 	$(XMLTO) -o man man $<
 endif
 
-html/%.html: %.txt $(COMMON)
+html/%.html: %.txt
 	@mkdir -p html
 	LANG=C cat $< \
 	| sed -e '/^include/b;s,\([A-Za-z.0-9]*\)[.]txt,link:\1.html[],g' \
