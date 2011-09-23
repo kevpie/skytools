@@ -104,7 +104,7 @@ disabled::
 
 == COMMAND LINE SWITCHES ==
 
-include::common.switches.txt[]
+  include common.switches.txt[]
 
 Options specific to scriptmgr:
 

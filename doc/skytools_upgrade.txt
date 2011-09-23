@@ -29,5 +29,5 @@ by applying upgrade scripts in order.
 
 == COMMAND LINE SWITCHES ==
 
-include::common.switches.txt[]
+  include common.switches.txt[]
 
